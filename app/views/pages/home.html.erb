@@ -1,0 +1,9 @@
+<h2>Welcome to Your Project Dashboard</h2>
+
+<%= form_tag "https://github.com/login/oauth/authorize", method: :get do %>
+  <%= hidden_field_tag :client_id, ENV["GITHUB_CLIENT_ID"] %>
+  <%= hidden_field_tag :redirect_uri, callback_github_auth_index_url %>
+  <%= hidden_field_tag :scope, "repo" %>
+  <%= hidden_field_tag :state, "ABCDE" %>
+  <%= submit_tag "Authenticate with Github" %>  
+<% end %>	
