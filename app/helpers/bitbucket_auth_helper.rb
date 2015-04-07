@@ -1,0 +1,2 @@
+module BitbucketAuthHelper
+end

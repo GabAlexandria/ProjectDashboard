@@ -8,6 +8,13 @@ Rails.application.routes.draw do
       get :authorized
     end
   end  
-	
+
+  resources :bitbucket_auth do
+    collection do
+      get :callback
+      get :authorized
+    end
+  end
+
   root 'pages#home'
 end
