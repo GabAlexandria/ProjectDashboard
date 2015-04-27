@@ -1,0 +1,4 @@
+<%= form_tag repositories_user_projects_path do %>
+  <%= submit_tag "Retrieve Github Projects", class: "button" %>
+<% end %>
+<%= raw ap(@repos) %>

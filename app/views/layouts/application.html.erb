@@ -43,6 +43,14 @@
 	    <i class="fa fa-twitter fa-lg"></i> Twitter
           <% end %>
 	</li>
+	<li>
+              <%= link_to user_path(current_user) do %>
+                <i class="fa fa-user fa-lg"></i>
+	      <% end %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out fa-lg"></i>
+	      <% end %>
+	</li>
       </ul>
 
       <div class="large-8 columns content">

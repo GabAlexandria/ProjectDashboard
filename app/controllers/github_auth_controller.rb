@@ -7,20 +7,20 @@ class GithubAuthController < ApplicationController
                    redirect_uri:  authorized_github_auth_index_url
                  }
 
-    headers = {'Accept' => 'application/json','Content-Type' => 'application/json'})
+    headers = {'Accept' => 'application/json','Content-Type' => 'application/json'}
     response = post("https://github.com/login/oauth/access_token", parameters, headers)
-    User.create( { access_token: JSON.parse(response.body)["access_token"] } )
+    current_user.update_attribute(:access_token, JSON.parse(response.body)["access_token"])
 
-    redirect_to authorized_github_auth_index_url
+    redirect_to user_projects_url
   end
 
   def authorized
    
-  end
+  end 
 
   private
 
-  def post(url, parameters, header)
+  def post(url, parameters, headers)
     uri = URI.parse(url)
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true

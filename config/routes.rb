@@ -19,8 +19,12 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :admin do
-    resources :projects
+  namespace :user do
+    resources :projects do
+      collection do
+        post :repositories
+      end
+    end
   end
 
   root 'pages#home'
