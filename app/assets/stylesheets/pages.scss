@@ -1,3 +1,30 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1, h2, h3, h4, h5, h6 {
+  
+  font-family: 'Josefin Slab', serif;
+}
+
+body {
+  margin-top: 40px;
+}
+
+.main {
+  margin-left: 40px;
+  .side-nav {
+    position: fixed;
+    h2, h5 { 
+      margin: 0; 
+      line-height: 1;
+    }
+    li > a {
+      font-size: 16px;
+      padding-left: 0;
+    }
+    img {
+      border-radius: 1000px;
+    }
+  }
+}
+
+.content {
+  margin-top: 20px;
+}

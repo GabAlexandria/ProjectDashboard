@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>ProjectDashboard</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "Gabriela Grant | Ruby on Rails Developer" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+    <div class="row main">
+      <ul class="side-nav large-3 columns">
+        <li>
+  	  <h2>Gabriela Grant</h2>
+	  <h5>Web Developer</h5>
+	</li> 
+        <li class="divider"></li>  
+        <li><%= link_to "Home", root_url %></li>
+        <li><%= link_to "Projects", projects_url %></li>
+        <li><%= link_to "About", "#" %></li>
+	<li><%= link_to "Contact", "#" %></li>
+	<li class="divider"></li>
+	<li>
+	  <%= link_to "https://github.com/GabAlexandria", target: "_blank" do %>
+	    <i class="fa fa-github fa-lg"></i> Github
+          <% end %>
+	</li>
+        <li>
+	  <%= link_to "http://ca.linkedin.com/in/gabgrant", target: "_blank" do %>
+	    <i class="fa fa-linkedin fa-lg"></i> LinkedIn
+          <% end %>
+        </li>
+	<li>
+	  <%= link_to "https://twitter.com/GabzAlexandria", target: "_blank" do %>
+	    <i class="fa fa-twitter fa-lg"></i> Twitter
+          <% end %>
+	</li>
+      </ul>
+
+      <div class="large-8 columns content">
+        <%= yield %>
+      </div>
+    </div>
+
+  </body>
 </html>
